@@ -63,15 +63,12 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-family: 'helvetica', system-ui, -apple-system, 'Segoe UI', sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.7;
+    letter-spacing: 0px;
 }
 
 img {
@@ -926,83 +923,176 @@ textarea {
 }
 
 /* =========================
-   TEAM BACK
+   TEAM BACK — DASAR
 ========================= */
 
 .team-back {
     padding: 0;
-    outline: auto;
     display: grid;
-    grid-template-rows: 20% 80%;
-
-    color:  #2B449C;
-
-    background: transparent;
-
+    grid-template-rows: 34% 66%;
+    background: #ffffff;
     transform: rotateY(180deg);
 }
 
 /* =========================
-   BAGIAN ATAS
-   NAMA + JABATAN
+   PENGURUS
 ========================= */
 
-.team-back-top {
+.pengurus-card .team-back-top {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
-    padding: 25px;
+    padding: 20px;
 
-    background:  #2B449C;
+    text-align: center;
+    background: #2B449C;
 }
 
-.team-back-top h3 {
+.pengurus-card .team-back-top h3 {
     margin: 0;
 
-    font-size: 23px;
+    color: #f1f1f1;
+    font-size: 22px;
     line-height: 1.2;
-    color:#52B2BF;
 }
 
-.team-back-top .role {
+.pengurus-card .team-back-top .role {
     margin-top: 8px;
+
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.12);
     color: #ffffff;
-    font-size: 12px;
+
+    font-size: 10px;
     font-weight: 800;
+    letter-spacing: .08em;
     text-transform: uppercase;
 }
 
-/* =========================
-   BAGIAN BAWAH
-   ISI / VISI / MISI
-========================= */
+.pengurus-card .team-back-bottom {
+    padding: 22px 24px;
 
-.team-back-bottom {
-    padding: 22px 25px;
-
-    background:  #2e2e2e;
-
-    overflow-y: auto;
+    background: #ffffff;
 }
 
-.team-back-bottom p {
+.pengurus-card .team-back-bottom::before {
+    content: "TENTANG PERAN";
+
+    display: block;
+    margin-bottom: 8px;
+
+    color: #2B449C;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .12em;
+}
+
+.pengurus-card .team-back-bottom p {
     margin: 0;
 
-    color: #FFFFFF;
-    font-size: 13px;
-    line-height: 1.7;
-}
-
-.team-back-bottom ul {
-    margin: 15px 0 0 17px;
-
-    color: #FFFFFF;
+    color: rgba(10,17,40,.72);
     font-size: 12px;
-    line-height: 1.7;
+    line-height: 1.65;
 }
 
-.team-back-bottom li {
+.pengurus-card .team-back-bottom ul {
+    margin: 14px 0 0 16px;
+
+    color: #0A1128;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.pengurus-card .team-back-bottom li {
+    margin-bottom: 5px;
+}
+
+/* =========================
+   DIVISI
+========================= */
+
+.divisi-team-card .team-back {
+    grid-template-rows: 38% 62%;
+    
+}
+
+.divisi-team-card .team-back-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+
+    text-align: center;
+    background: linear-gradient(145deg, #2B449C, #183252);
+}
+
+.divisi-team-card .team-back-top .role {
+    order: 1;
+
+    margin: 0 0 7px;
+
+    color: #52B2BF;
+
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+.divisi-team-card .team-back-top h3 {
+    order: 2;
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.divisi-team-card .team-back-bottom {
+    padding: 20px 23px;
+    border-radius: 0 0 20px 20px;
+    background: #f7f9ff;
+}
+
+.divisi-team-card .team-back-bottom::before {
+    content: "TENTANG DIVISI";
+
+    display: block;
+    margin-bottom: 8px;
+
+    color: #2B449C;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .12em;
+}
+
+.divisi-team-card .team-back-bottom p {
+    margin: 0;
+
+    color: rgba(10,17,40,.72);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.divisi-team-card .team-back-bottom ul {
+    margin: 13px 0 0 16px;
+
+    color: #0A1128;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.divisi-team-card .team-back-bottom li {
     margin-bottom: 5px;
 }
 
@@ -1215,19 +1305,53 @@ textarea {
     align-items: center;
     gap: 8px;
     margin-top: 20px;
+
+    /* Jangan turun ke baris berikutnya */
+    flex-wrap: nowrap;
+
+    /* Bisa digeser kiri-kanan */
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    /* Supaya scrollbar tidak mengambil banyak ruang */
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+
+    /* Jarak aman saat tombol digeser */
+    padding: 4px 2px 8px;
+
+    /* Tombol tidak memengaruhi lebar card */
+    min-width: 0;
 }
 
 .divisi-nav-btn {
-    padding: 4px 14px;
+    flex: 0 0 auto;
+
+    min-width: 44px;
+    height: 34px;
+
+    padding: 4px 12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 999px;
     background: #F1F5F9;
     border: 1px solid rgba(43, 68, 156, 0.18);
+
     color: #0A1128;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 800;
+
     cursor: pointer;
     user-select: none;
-    transition: all 0.2s ease;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
 }
 
 .divisi-nav-btn:hover {
@@ -1235,7 +1359,13 @@ textarea {
     background: rgba(82, 178, 191, 0.15);
     transform: translateY(-1px);
 }
+.divisi-nav::-webkit-scrollbar {
+    height: 0;
+}
 
+.divisi-nav {
+    scrollbar-width: none;
+}
 /* Interaktivitas Pure CSS :checked */
 .divisi-card:has(.divisi-radio:nth-of-type(1):checked) .photo-1 {
     opacity: 1;
@@ -2072,71 +2202,146 @@ textarea {
 }
 
 /* =====================================================
-   DIVISI MEMBER TABS — SCROLLABLE / UNLIMITED
+   FIX FINAL — DIVISI TEAM CARD
+   Tinggi mengikuti isi, flip tetap berjalan,
+   dan teks panjang tidak terpotong.
    ===================================================== */
-.divisi-nav {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 20px;
+
+.divisi-team-card {
+    height: auto;
+    min-height: 390px;
+}
+
+.divisi-team-card .team-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
     width: 100%;
+    height: auto;
+    min-height: 390px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.divisi-team-card .team-face {
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 390px;
+}
+
+.divisi-team-card .team-front {
+    z-index: 2;
+}
+
+.divisi-team-card .team-front img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 390px;
+    object-fit: cover;
+}
+
+.divisi-team-card .team-back {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 390px;
+    height: auto;
+    overflow: visible;
+    transform: rotateY(180deg);
+}
+
+.divisi-team-card .team-back-top {
+    flex: 0 0 auto;
+    min-height: 150px;
+    height: auto;
+    padding: 24px 20px;
+    box-sizing: border-box;
+}
+
+.divisi-team-card .team-back-top h3 {
     max-width: 100%;
+    margin: 0;
+    font-size: clamp(24px, 2.5vw, 30px);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.divisi-team-card .team-back-bottom {
+    flex: 0 0 auto;
+    min-height: 240px;
+    height: auto;
+    padding: 22px 23px;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.divisi-team-card .team-back-bottom p,
+.divisi-team-card .team-back-bottom li {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.divisi-team-card .team-back-bottom ul {
+    padding-right: 2px;
+}
+
+/* Tetap satu baris dan bisa digeser otomatis oleh JS */
+.divisi-nav {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
-    flex-wrap: nowrap;
-    padding: 4px 2px 9px;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(43, 68, 156, .35) transparent;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
 }
 
 .divisi-nav::-webkit-scrollbar {
-    height: 5px;
-}
-
-.divisi-nav::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.divisi-nav::-webkit-scrollbar-thumb {
-    background: rgba(43, 68, 156, .30);
-    border-radius: 999px;
+    display: none;
+    width: 0;
+    height: 0;
 }
 
 .divisi-nav-btn {
     flex: 0 0 auto;
+    flex-shrink: 0;
     white-space: nowrap;
 }
 
-/* Anggota di atas nomor 9 tetap bisa dikontrol oleh JavaScript */
-.divisi-photo-layer.is-active {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-
-.divisi-member-slide.is-active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-}
-
-.divisi-nav-btn.is-active {
-    background: #183252;
-    border-color: #183252;
-    color: #FFFFFF;
-    box-shadow: 0 3px 10px rgba(24, 50, 82, 0.3);
-}
-
+/* Mobile: card tetap mengikuti isi */
 @media (max-width: 640px) {
-    .divisi-nav {
-        gap: 7px;
-        padding-bottom: 8px;
+    .divisi-team-card,
+    .divisi-team-card .team-inner,
+    .divisi-team-card .team-face,
+    .divisi-team-card .team-back {
+        min-height: 360px;
     }
 
-    .divisi-nav-btn {
-        padding: 6px 13px;
+    .divisi-team-card .team-front img {
+        min-height: 360px;
+    }
+
+    .divisi-team-card .team-back-top {
+        min-height: 135px;
+        padding: 22px 18px;
+    }
+
+    .divisi-team-card .team-back-top h3 {
+        font-size: 24px;
+    }
+
+    .divisi-team-card .team-back-bottom {
+        min-height: 225px;
+        padding: 20px;
     }
 }
-
