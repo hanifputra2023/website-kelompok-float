@@ -962,13 +962,12 @@ textarea {
 
     font-size: 23px;
     line-height: 1.2;
-    color: #FFFFFF;
+    color:#52B2BF;
 }
 
 .team-back-top .role {
     margin-top: 8px;
-
-    color: #52B2BF;
+    color: #ffffff;
     font-size: 12px;
     font-weight: 800;
     text-transform: uppercase;
@@ -982,7 +981,7 @@ textarea {
 .team-back-bottom {
     padding: 22px 25px;
 
-    background:  #454646;
+    background:  #2e2e2e;
 
     overflow-y: auto;
 }
@@ -1128,8 +1127,8 @@ textarea {
     background: linear-gradient(
         180deg,
         rgba(10, 17, 40, 0.25) 0%,
-        rgba(43, 68, 156, 0.45) 50%,
-        rgba(10, 17, 40, 0.85) 100%
+        rgba(43, 68, 156, 0.45) 80%,
+        rgba(10, 17, 40, 0.85) 150%
     );
     transition: background 0.3s ease;
 }
@@ -1138,8 +1137,8 @@ textarea {
     background: linear-gradient(
         180deg,
         rgba(10, 17, 40, 0.15) 0%,
-        rgba(43, 68, 156, 0.35) 50%,
-        rgba(10, 17, 40, 0.75) 100%
+        rgba(43, 68, 156, 0.35) 100%,
+        rgba(10, 17, 40, 0.75) 200%
     );
 }
 
@@ -1299,6 +1298,86 @@ textarea {
     transform: translateX(0);
 }
 .divisi-card:has(.divisi-radio:nth-of-type(4):checked) .btn-4 {
+    background: #183252;
+    border-color: #183252;
+    color: #FFFFFF;
+    box-shadow: 0 3px 10px rgba(24, 50, 82, 0.3);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(5):checked) .photo-5 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(5):checked) .slide-5 {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(5):checked) .btn-5 {
+    background: #183252;
+    border-color: #183252;
+    color: #FFFFFF;
+    box-shadow: 0 3px 10px rgba(24, 50, 82, 0.3);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(6):checked) .photo-6 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(6):checked) .slide-6 {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(6):checked) .btn-6 {
+    background: #183252;
+    border-color: #183252;
+    color: #FFFFFF;
+    box-shadow: 0 3px 10px rgba(24, 50, 82, 0.3);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(7):checked) .photo-7 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(7):checked) .slide-7 {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(7):checked) .btn-7 {
+    background: #183252;
+    border-color: #183252;
+    color: #FFFFFF;
+    box-shadow: 0 3px 10px rgba(24, 50, 82, 0.3);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(8):checked) .photo-8 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(8):checked) .slide-8 {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(8):checked) .btn-8 {
+    background: #183252;
+    border-color: #183252;
+    color: #FFFFFF;
+    box-shadow: 0 3px 10px rgba(24, 50, 82, 0.3);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(9):checked) .photo-9 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(9):checked) .slide-9 {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+.divisi-card:has(.divisi-radio:nth-of-type(9):checked) .btn-9 {
     background: #183252;
     border-color: #183252;
     color: #FFFFFF;
@@ -1991,3 +2070,73 @@ textarea {
     max-width: none;
   }
 }
+
+/* =====================================================
+   DIVISI MEMBER TABS — SCROLLABLE / UNLIMITED
+   ===================================================== */
+.divisi-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    padding: 4px 2px 9px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(43, 68, 156, .35) transparent;
+    -webkit-overflow-scrolling: touch;
+}
+
+.divisi-nav::-webkit-scrollbar {
+    height: 5px;
+}
+
+.divisi-nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.divisi-nav::-webkit-scrollbar-thumb {
+    background: rgba(43, 68, 156, .30);
+    border-radius: 999px;
+}
+
+.divisi-nav-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+/* Anggota di atas nomor 9 tetap bisa dikontrol oleh JavaScript */
+.divisi-photo-layer.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.divisi-member-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.divisi-nav-btn.is-active {
+    background: #183252;
+    border-color: #183252;
+    color: #FFFFFF;
+    box-shadow: 0 3px 10px rgba(24, 50, 82, 0.3);
+}
+
+@media (max-width: 640px) {
+    .divisi-nav {
+        gap: 7px;
+        padding-bottom: 8px;
+    }
+
+    .divisi-nav-btn {
+        padding: 6px 13px;
+    }
+}
+
